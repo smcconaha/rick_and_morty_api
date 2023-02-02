@@ -3,7 +3,6 @@ import axios from "axios";
 import "./../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./../node_modules/bootstrap/dist/js/bootstrap.min.js";
 import Character from "./components/Character";
-import ApiCall from "./components/ApiCall";
 
 function App() {
 
@@ -15,7 +14,6 @@ function App() {
         .then(function(response) {
             // handle success
             setCharData(response.data)
-            console.log(response.data)
         })
         .catch(function (error) {
             if (error.response) {
@@ -43,7 +41,7 @@ function App() {
   
   return (
     <div className="container">
-      <Character char=/>
+      <Character charData={charData}/>
     </div>
   );
 }

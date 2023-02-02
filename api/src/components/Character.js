@@ -1,6 +1,10 @@
 import React from "react";
 
 function Character(props) {
+    let char = props.charData.results
+    for (const item of char) {
+        console.log(item)
+    }
     return (
         <div className='col-3'>
             <div className="char-card mb-3">
