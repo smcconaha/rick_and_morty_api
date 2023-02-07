@@ -6,6 +6,7 @@ import Character from "./components/Character";
 
 function App() {
 
+  const [isLoading, setLoading] = useState(true);
   const [charData, setCharData] = useState([]);
   const endpoint = "https://rickandmortyapi.com/api/character"
 
@@ -14,7 +15,10 @@ function App() {
         .then(function(response) {
             // handle success
             setCharData(response.data)
-        })
+            //turn loading mode off
+            setLoading(false);
+            // console.log(response.data.results.map(result => result.name))
+          })
         .catch(function (error) {
             if (error.response) {
                 // The request was made and the server responded with a status code
@@ -38,7 +42,16 @@ function App() {
           });
   }, []);
   //if (!post) return null;
-  
+  //check if charData and charData.results are truthy before accessing the name property
+  //alternatively place within the .then of the axios call, after charData is populated
+  // if (charData && charData.results) {
+  //   console.log(charData.results.name);
+  // }
+
+  if (isLoading) {
+    return <div className="Load">Loading...</div>;
+  }
+
   return (
     <div className="container">
       <Character charData={charData}/>
