@@ -1,10 +1,12 @@
 import React from "react";
 
 function Character(props) {
-    // console.log(props.charData.results.map(result => result.name));
+    //this returns the number of pages available
+    console.log(props.charData.info.pages)
+
     let charData = props.charData.results.map(result => 
         (
-            <div className='col-3'>
+            <div className='col'>
             <div className="char-card mb-3">
                 <div className="row g-0">
                     <div className="col-md-4">
@@ -13,13 +15,12 @@ function Character(props) {
                     <div className="col-md-8">
                     <div className="card-body">
                         <h5 className="card-title">{result.name}</h5>
-                        <p className="card-text">Status: {result.status}</p>
-                        <p className="card-text">Species: {result.species}</p>
-                        <p className="card-text">Gender: {result.gender}</p>
-                        <p className="card-text">Origin: {result.origin.name}</p>
-                        <p className="card-text">Last known location: {result.location.name}</p>
                         <ul>
-                            <li></li>
+                            <li className="card-text">Status: {result.status}</li>
+                            <li className="card-text">Species: {result.species}</li>
+                            <li className="card-text">Gender: {result.gender}</li>
+                            <li className="card-text">Origin: {result.origin.name}</li>
+                            <li className="card-text">Last known location: {result.location.name}</li>
                         </ul>
                     </div>
                     </div>

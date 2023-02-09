@@ -3,6 +3,7 @@ import axios from "axios";
 import "./../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./../node_modules/bootstrap/dist/js/bootstrap.min.js";
 import Character from "./components/Character";
+import Filter from "./components/Filter";
 
 function App() {
 
@@ -55,6 +56,7 @@ function App() {
   return (
     <div className="container">
       <Character charData={charData}/>
+      <Filter charData={charData}/>
     </div>
   );
 }
