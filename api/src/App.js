@@ -6,10 +6,9 @@ import Character from "./components/Character";
 import Filter from "./components/Filter";
 
 function App() {
-
+  const endpoint = `https://rickandmortyapi.com/api/character/?page=1`
   const [isLoading, setLoading] = useState(true);
   const [charData, setCharData] = useState([]);
-  const endpoint = "https://rickandmortyapi.com/api/character"
 
   useEffect(() => {
     let response = axios.get(endpoint)
@@ -41,7 +40,8 @@ function App() {
           .then(function () {
             // always executed
           });
-  }, []);
+  }, [endpoint]);
+  //above, I put a watch on endpoint
   //if (!post) return null;
   //check if charData and charData.results are truthy before accessing the name property
   //alternatively place within the .then of the axios call, after charData is populated

@@ -17,10 +17,10 @@ function Filter(props) {
                     <nav aria-label="Page navigation example">
                         <ul className="pagination justify-content-center">
                             <li className="page-item">
-                                <a className="page-link" onClick={() => setCount(count -1)}>Previous</a>
+                                <button className="page-link" onClick={() => setCount(count -1)}>Previous</button>
                             </li>
                             <li class="page-item">
-                                <a className="page-link" onClick={() => setCount(count + 1)}>Next</a>
+                                <button className="page-link" onClick={() => setCount(count + 1)}>Next</button>
                             </li>
                         </ul>
                     </nav>
