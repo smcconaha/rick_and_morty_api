@@ -1,17 +1,21 @@
 import React, { useState , useEffect} from "react";
 import axios from "axios";
+import "./App.css"
 import "./../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./../node_modules/bootstrap/dist/js/bootstrap.min.js";
 import Character from "./components/Character";
 import Filter from "./components/Filter";
 
 function App() {
-  const endpoint = `https://rickandmortyapi.com/api/character/?page=1`
   const [isLoading, setLoading] = useState(true);
   const [charData, setCharData] = useState([]);
+  const [page, setPage] = useState(1);
+  const endpoint = `https://rickandmortyapi.com/api/character/?page=${page}`
+  //I could destructure the returned data and pass results as props to a component
+  // let { info, results } = charData;
 
   useEffect(() => {
-    let response = axios.get(endpoint)
+    axios.get(endpoint)
         .then(function(response) {
             // handle success
             setCharData(response.data)
@@ -44,10 +48,6 @@ function App() {
   //above, I put a watch on endpoint
   //if (!post) return null;
   //check if charData and charData.results are truthy before accessing the name property
-  //alternatively place within the .then of the axios call, after charData is populated
-  // if (charData && charData.results) {
-  //   console.log(charData.results.name);
-  // }
 
   if (isLoading) {
     return <div className="Load">Loading...</div>;
@@ -55,8 +55,13 @@ function App() {
 
   return (
     <div className="container">
-      <Character charData={charData}/>
-      <Filter charData={charData}/>
+        <div className="col-lg-8 col-12">
+          <div className="row">
+          <h1 className="text-center mb-3">Characters</h1>
+            <Character charData={charData}/>
+            <Filter charData={charData} setPage={setPage} page={page}/>
+          </div>
+        </div>
     </div>
   );
 }
