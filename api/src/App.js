@@ -50,7 +50,18 @@ function App() {
   //check if charData and charData.results are truthy before accessing the name property
 
   if (isLoading) {
-    return <div className="Load">Loading...</div>;
+    return (
+      <div className="container loading">
+        <div className="row justify-content-center align-content-center">
+          <div className="col-6 col-sm-3">
+            <div class="d-flex align-items-center">
+              <strong>Loading...</strong>
+              <div class="spinner-border text-success ms-auto" role="status" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   return (

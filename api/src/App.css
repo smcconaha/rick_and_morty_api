@@ -19,3 +19,7 @@ body {
 .footer, .header{
   background-color: black;
 }
+
+.loading {
+  min-height: 300px;
+}
