@@ -55,9 +55,9 @@ function App() {
 
   return (
     <div className="container">
-        <h1 className="text-center mb-3">Characters</h1>
+        <h1 className="header text-center mb-3 fixed-top">Characters</h1>
         <div className="row justify-content-center">
-          <div className="col-lg-8 col-12">
+          <div className="col-lg-8 col-12 mb-5 mt-5">
             <Character charData={charData}/>
             <Filter charData={charData} setPage={setPage} page={page}/>
           </div>

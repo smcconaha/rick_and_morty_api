@@ -9,9 +9,13 @@
 }
 
 body {
-  background-color: black !important;
+  background-color: rgb(40, 37, 37) !important;
 }
 
 .container {
   color: white;
+}
+
+.footer, .header{
+  background-color: black;
 }
