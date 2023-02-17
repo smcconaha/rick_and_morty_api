@@ -6,7 +6,7 @@ function Character(props) {
     let charData = props.charData.results.map(result => 
         (
         <div className="App">
-                <div className="char-card d-flex flex-column justify-content-center border border-dark">
+                <div className="char-card d-flex flex-column justify-content-center border border-light m-3">
                     <div className="row g-0">
                         <div className="col-md-4">
                         <img src={result.image} className="img-fluid" alt="#"/>
