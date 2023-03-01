@@ -11,10 +11,10 @@ function App() {
   const [isLoading, setLoading] = useState(true);
   const [charData, setCharData] = useState([]);
   const [page, setPage] = useState(1);
-  const [status, seteStatus] = useState("");
+  const [status, setStatus] = useState("");
   const [gender, setGender] = useState("");
   const [species, setSpecies] = useState("");
-  const endpoint = `https://rickandmortyapi.com/api/character/?page=${page}`
+  const endpoint = `https://rickandmortyapi.com/api/character/?page=${page}&status=${status}&gender=${gender}&species=${species}`
   //I could destructure the returned data and pass results as props to a component
   // let { info, results } = charData;
 
@@ -73,7 +73,14 @@ function App() {
         <h1 className="header text-center mb-3 fixed-top">Characters</h1>
         <div className="row justify-content-center">
           <div className="col-lg-4 col-4 mb-5 mt-5 filterDiv">
-            <Filter charData={charData}/>
+            <Filter 
+              page={page}
+              status={status}
+              setStatus={setStatus}
+              setGender={setGender}
+              setSpecies={setSpecies}
+              setPageNumber={setPage}
+            />
           </div>
           <div className="col-lg-8 col-8 mb-5 mt-5">
             <Character charData={charData}/>
