@@ -11,6 +11,9 @@ function App() {
   const [isLoading, setLoading] = useState(true);
   const [charData, setCharData] = useState([]);
   const [page, setPage] = useState(1);
+  const [status, seteStatus] = useState("");
+  const [gender, setGender] = useState("");
+  const [species, setSpecies] = useState("");
   const endpoint = `https://rickandmortyapi.com/api/character/?page=${page}`
   //I could destructure the returned data and pass results as props to a component
   // let { info, results } = charData;

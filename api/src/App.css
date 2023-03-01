@@ -26,9 +26,4 @@ body {
 
 .filterDiv {
   width: 280px;
-  background-color: black;
-}
-
-.filterTextBox {
-  background-color: black !important;
 }
