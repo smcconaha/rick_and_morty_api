@@ -5,6 +5,7 @@ import "./../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./../node_modules/bootstrap/dist/js/bootstrap.min.js";
 import Character from "./components/Character";
 import Filter from "./components/Filter";
+import Pagination from "./components/Pagination";
 
 function App() {
   const [isLoading, setLoading] = useState(true);
@@ -54,9 +55,9 @@ function App() {
       <div className="container loading">
         <div className="row justify-content-center align-content-center">
           <div className="col-6 col-sm-3">
-            <div class="d-flex align-items-center">
+            <div className="d-flex align-items-center">
               <strong>Loading...</strong>
-              <div class="spinner-border text-success ms-auto" role="status" aria-hidden="true"></div>
+              <div className="spinner-border text-success ms-auto" role="status" aria-hidden="true"></div>
             </div>
           </div>
         </div>
@@ -68,9 +69,12 @@ function App() {
     <div className="container">
         <h1 className="header text-center mb-3 fixed-top">Characters</h1>
         <div className="row justify-content-center">
-          <div className="col-lg-8 col-12 mb-5 mt-5">
+          <div className="col-lg-4 col-4 mb-5 mt-5 filterDiv">
+            <Filter charData={charData}/>
+          </div>
+          <div className="col-lg-8 col-8 mb-5 mt-5">
             <Character charData={charData}/>
-            <Filter charData={charData} setPage={setPage} page={page}/>
+            <Pagination charData={charData} setPage={setPage} page={page}/>
           </div>
         </div>
     </div>

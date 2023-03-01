@@ -23,3 +23,12 @@ body {
 .loading {
   min-height: 300px;
 }
+
+.filterDiv {
+  width: 280px;
+  background-color: black;
+}
+
+.filterTextBox {
+  background-color: black !important;
+}
